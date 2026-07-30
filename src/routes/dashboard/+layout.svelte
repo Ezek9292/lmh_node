@@ -16,7 +16,7 @@
 <style>
 	.dashboard-layout {
 		min-height: 100vh;
-		padding: 2.4rem 0.9rem 0;
+		padding: 0rem 0.9rem 0;
 		background: #f4f4f4;
 	}
 

@@ -5,6 +5,7 @@
 	import logo from '$lib/assets/logo.jpg';
 	import userProfile from '$lib/assets/user-profile.jpg';
 	import settingsIcon from '$lib/assets/settings.svg';
+	import dropdown from '$lib/assets/dropdown.svg'
 
 	interface Props {
 		branchName: string;
@@ -28,7 +29,7 @@
 				<span class="avatar-placeholder">ED</span>
 			{/if}
 
-			<span class="arrow">⌄</span>
+			<img src={dropdown} alt="little dropdown">
 		</button>
 
 		<p class="branch-name">{branchName}</p>
@@ -84,11 +85,11 @@
 		align-items: center;
 		gap: 1rem;
 
-		width: 100%;
-		min-height: 64px;
-		padding: 0 1.25rem;
+		width: auto;
+		height: 0px;
+		min-height: 45px;
+		padding: 0 1rem;
 
-		/* border-bottom: 3px solid #169bea; */
 		background: white;
 		box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 	}
@@ -151,14 +152,11 @@
 		font-weight: 700;
 	}
 
-	.arrow {
-		font-size: 1.2rem;
-	}
-
 	.branch-name {
 		margin: 0;
 		font-size: 0.8rem;
 		white-space: nowrap;
+		font-family:Arial, Helvetica, sans-serif
 	}
 
 	.icon-link,
