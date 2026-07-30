@@ -86,7 +86,6 @@
 		gap: 1rem;
 
 		width: auto;
-		height: 0px;
 		min-height: 45px;
 		padding: 0 1rem;
 
