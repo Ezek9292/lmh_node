@@ -2,10 +2,10 @@
 	import { resolve } from '$app/paths';
 	import signalBarsIcon from '$lib/assets/signal-bars.svg';
 	import connectionIcon from '$lib/assets/connection.svg';
-	import logo from '$lib/assets/logo.jpg';
+	import logo from '$lib/assets/logo.svg';
 	import userProfile from '$lib/assets/user-profile.jpg';
 	import settingsIcon from '$lib/assets/settings.svg';
-	import dropdown from '$lib/assets/dropdown.svg'
+	import dropdown from '$lib/assets/dropdown.svg';
 
 	interface Props {
 		branchName: string;
@@ -29,7 +29,7 @@
 				<span class="avatar-placeholder">ED</span>
 			{/if}
 
-			<img src={dropdown} alt="little dropdown">
+			<img class="dropdown-icon" src={dropdown} alt="" />
 		</button>
 
 		<p class="branch-name">{branchName}</p>
@@ -53,10 +53,10 @@
 	</nav>
 
 	<div class="right-section">
-		<button class="action-link" type="button">
+		<a class="action-link" href={resolve('/integration')}>
 			<span>≡</span>
 			<span>INTEGRATION</span>
-		</button>
+		</a>
 
 		<button class="action-link" type="button">
 			<span>≡</span>
@@ -131,7 +131,7 @@
 		cursor: pointer;
 	}
 
-	.profile-button img,
+	.profile-button img:not(.dropdown-icon),
 	.avatar-placeholder {
 		width: 32px;
 		height: 32px;
@@ -140,6 +140,12 @@
 
 	.profile-button img {
 		object-fit: cover;
+	}
+
+	.profile-button .dropdown-icon {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 0;
 	}
 
 	.avatar-placeholder {
@@ -155,7 +161,7 @@
 		margin: 0;
 		font-size: 0.8rem;
 		white-space: nowrap;
-		font-family:Arial, Helvetica, sans-serif
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	.icon-link,
@@ -194,7 +200,7 @@
 		border-radius: 999px;
 
 		font-size: 0.65rem;
-		font-weight: 600;
+		font-weight: 400;
 	}
 
 	.alarm-count {
