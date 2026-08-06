@@ -5,7 +5,7 @@
 	import logo from '$lib/assets/logo.svg';
 	import userProfile from '$lib/assets/user-profile.jpg';
 	import settingsIcon from '$lib/assets/settings.svg';
-	import dropdown from '$lib/assets/dropdown.svg';
+	import dropdown from '$lib/assets/dropdown.svg'
 
 	interface Props {
 		branchName: string;
@@ -29,7 +29,7 @@
 				<span class="avatar-placeholder">ED</span>
 			{/if}
 
-			<img class="dropdown-icon" src={dropdown} alt="" />
+			<img src={dropdown} alt="little dropdown">
 		</button>
 
 		<p class="branch-name">{branchName}</p>
@@ -53,10 +53,11 @@
 	</nav>
 
 	<div class="right-section">
-		<a class="action-link" href={resolve('/integration')}>
+		<button class="action-link" type="button">
 			<span>≡</span>
 			<span>INTEGRATION</span>
-		</a>
+			<a href="/integration">Integration</a>
+		</button>
 
 		<button class="action-link" type="button">
 			<span>≡</span>
@@ -131,7 +132,7 @@
 		cursor: pointer;
 	}
 
-	.profile-button img:not(.dropdown-icon),
+	.profile-button img,
 	.avatar-placeholder {
 		width: 32px;
 		height: 32px;
@@ -140,12 +141,6 @@
 
 	.profile-button img {
 		object-fit: cover;
-	}
-
-	.profile-button .dropdown-icon {
-		width: 0.7rem;
-		height: 0.7rem;
-		border-radius: 0;
 	}
 
 	.avatar-placeholder {
@@ -161,7 +156,7 @@
 		margin: 0;
 		font-size: 0.8rem;
 		white-space: nowrap;
-		font-family: Arial, Helvetica, sans-serif;
+		font-family:Arial, Helvetica, sans-serif
 	}
 
 	.icon-link,
