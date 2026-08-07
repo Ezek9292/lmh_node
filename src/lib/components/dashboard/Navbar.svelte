@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import signalBarsIcon from '$lib/assets/signal-bars.svg';
 	import connectionIcon from '$lib/assets/connection.svg';
 	import logo from '$lib/assets/logo.svg';
 	import userProfile from '$lib/assets/user-profile.jpg';
 	import settingsIcon from '$lib/assets/settings.svg';
-	import dropdown from '$lib/assets/dropdown.svg'
+	import dropdown from '$lib/assets/dropdown.svg';
 
 	interface Props {
 		branchName: string;
@@ -14,6 +15,7 @@
 	}
 
 	let { branchName, alarmCount = 0, userImage }: Props = $props();
+	const isIntegrationPage = $derived(page.url.pathname === resolve('/integration'));
 </script>
 
 <header class="navbar">
@@ -29,7 +31,7 @@
 				<span class="avatar-placeholder">ED</span>
 			{/if}
 
-			<img src={dropdown} alt="little dropdown">
+			<img src={dropdown} alt="little dropdown" />
 		</button>
 
 		<p class="branch-name">{branchName}</p>
@@ -53,11 +55,15 @@
 	</nav>
 
 	<div class="right-section">
-		<button class="action-link" type="button">
+		<a
+			class="action-link"
+			class:active={isIntegrationPage}
+			href={resolve('/integration')}
+			aria-current={isIntegrationPage ? 'page' : undefined}
+		>
 			<span>≡</span>
 			<span>INTEGRATION</span>
-			<a href="/integration">Integration</a>
-		</button>
+		</a>
 
 		<button class="action-link" type="button">
 			<span>≡</span>
@@ -156,7 +162,7 @@
 		margin: 0;
 		font-size: 0.8rem;
 		white-space: nowrap;
-		font-family:Arial, Helvetica, sans-serif
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	.icon-link,
@@ -216,6 +222,10 @@
 		text-decoration: none;
 		font-size: 0.65rem;
 		cursor: pointer;
+	}
+
+	.action-link.active {
+		background: #8acb45;
 	}
 
 	.connection-button {

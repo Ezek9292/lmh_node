@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import contentCopyIcon from '$lib/assets/content_copy.svg';
+	import checkIcon from '$lib/assets/check_circle.svg';
 
 	interface IntegrationParameter {
 		label: string;
@@ -275,7 +277,7 @@
 							class="update-button"
 							onclick={() => openUpdateModal(integration)}
 						>
-							<span class="update-icon" aria-hidden="true">◉</span>
+							<img src="{checkIcon}" alt="checksign icon" class="update-icon" />
 							Update
 						</button>
 					</header>
@@ -299,7 +301,7 @@
 										{#if copiedText === `${integration.id}-${parameter.label}`}
 											✓
 										{:else}
-											▣
+											<img class="copy-icon" src={contentCopyIcon} alt="" />
 										{/if}
 									</button>
 								</div>
@@ -384,7 +386,7 @@
 				</label>
 
 				<button type="submit" class="proceed-button">
-					<span aria-hidden="true">✓</span>
+					<img src="{checkIcon}" alt="checksign icon" class="update-icon" />
 					Proceed
 				</button>
 			</form>
@@ -401,6 +403,7 @@
 		min-height: calc(100vh - 70px);
 		padding: 32px 20px 80px;
 		background: #f6f6f6;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	.integration-container {
@@ -430,7 +433,7 @@
 		display: inline-flex;
 		gap: 6px;
 		align-items: center;
-		color: #7bbf16;
+		color: #8AC926;
 		font-size: 12px;
 		font-weight: 700;
 		letter-spacing: 0.04em;
@@ -452,10 +455,10 @@
 	.success-message {
 		padding: 12px 16px;
 		margin-bottom: 8px;
-		color: #315f00;
+		color: #8AC926;
 		font-size: 13px;
 		background: #ebf8d8;
-		border: 1px solid #9bd34b;
+		border: 1px solid #8AC926;
 	}
 
 	.integrations-list {
@@ -495,13 +498,13 @@
 		font-size: 11px;
 		font-weight: 600;
 		text-transform: uppercase;
-		background: #80c41c;
-		border: 1px solid #72b011;
+		background: #8AC926;
+		border: 1px solid #8AC926;
 		cursor: pointer;
 	}
 
 	.update-button:hover {
-		background: #73b316;
+		background: #8AC926;
 	}
 
 	.update-button:focus-visible,
@@ -515,6 +518,7 @@
 
 	.update-icon {
 		font-size: 10px;
+		color: black;
 	}
 
 	.parameters-grid {
@@ -566,8 +570,12 @@
 	}
 
 	.copy-button {
+		display: grid;
+		width: 20px;
+		height: 20px;
 		flex-shrink: 0;
 		padding: 2px;
+		place-items: center;
 		color: #444444;
 		font-size: 12px;
 		background: transparent;
@@ -576,7 +584,13 @@
 	}
 
 	.copy-button:hover {
-		color: #7bbf16;
+		color: #8AC926;
+	}
+
+	.copy-icon {
+		display: block;
+		width: 16px;
+		height: 16px;
 	}
 
 	.modal-backdrop {
