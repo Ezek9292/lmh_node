@@ -307,7 +307,7 @@
 								</div>
 
 								<p class:secret-value={parameter.secret}>
-									{parameter.secret ? '••••••••' : parameter.value}
+									{parameter.secret ? '**********' : parameter.value}
 								</p>
 							</div>
 						{/each}
@@ -403,7 +403,7 @@
 		min-height: calc(100vh - 70px);
 		padding: 32px 20px 80px;
 		background: #f6f6f6;
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 
 	.integration-container {
@@ -564,8 +564,8 @@
 	}
 
 	.parameter p.secret-value {
-		font-size: 22px;
-		font-weight: 700;
+		font-size: 35px;
+		font-weight: 400;
 		letter-spacing: 1px;
 	}
 
