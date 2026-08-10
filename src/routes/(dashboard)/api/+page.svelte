@@ -160,7 +160,7 @@
 		padding: 5px 12px;
 		color: #1f2a16;
 		font-size: 11px;
-		font-weight: 600;
+		font-weight: 500;
 		text-transform: uppercase;
 		background: #8ac926;
 		border: 1px solid #8ac926;

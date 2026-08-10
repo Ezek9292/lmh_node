@@ -268,7 +268,7 @@
 							class="update-button"
 							onclick={() => openUpdateModal(integration)}
 						>
-							<img src={checkIcon} alt="checksign icon" class="update-icon" />
+							<img src="{checkIcon}" alt="checksign icon" class="update-icon" />
 							Update
 						</button>
 					</header>
@@ -377,7 +377,7 @@
 				</label>
 
 				<button type="submit" class="proceed-button">
-					<img src={checkIcon} alt="checksign icon" class="update-icon" />
+					<img src="{checkIcon}" alt="checksign icon" class="update-icon" />
 					Proceed
 				</button>
 			</form>
@@ -394,7 +394,7 @@
 		min-height: calc(100vh - 70px);
 		padding: 32px 20px 80px;
 		background: #f6f6f6;
-		font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 
 	.integration-container {
@@ -405,10 +405,10 @@
 	.success-message {
 		padding: 12px 16px;
 		margin-bottom: 8px;
-		color: #8ac926;
+		color: #8AC926;
 		font-size: 13px;
 		background: #ebf8d8;
-		border: 1px solid #8ac926;
+		border: 1px solid #8AC926;
 	}
 
 	.integrations-list {
@@ -448,13 +448,13 @@
 		font-size: 11px;
 		font-weight: 600;
 		text-transform: uppercase;
-		background: #8ac926;
-		border: 1px solid #8ac926;
+		background: #8AC926;
+		border: 1px solid #8AC926;
 		cursor: pointer;
 	}
 
 	.update-button:hover {
-		background: #8ac926;
+		background: #8AC926;
 	}
 
 	.update-button:focus-visible,
@@ -533,7 +533,7 @@
 	}
 
 	.copy-button:hover {
-		color: #8ac926;
+		color: #8AC926;
 	}
 
 	.copy-icon {
