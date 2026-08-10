@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import PageHeader from '$lib/components/dashboard/PageHeader.svelte';
 	import contentCopyIcon from '$lib/assets/content_copy.svg';
 	import checkIcon from '$lib/assets/check_circle.svg';
 
@@ -249,16 +249,7 @@
 
 <section class="integration-page">
 	<div class="integration-container">
-		<header class="page-header">
-			<a href={resolve('/dashboard')} class="back-link">
-				<span aria-hidden="true">←</span>
-				Back
-			</a>
-
-			<span class="header-divider"></span>
-
-			<h1>Integration</h1>
-		</header>
+		<PageHeader title="Integration" />
 
 		{#if statusMessage}
 			<div class="success-message" role="status">
@@ -277,7 +268,7 @@
 							class="update-button"
 							onclick={() => openUpdateModal(integration)}
 						>
-							<img src="{checkIcon}" alt="checksign icon" class="update-icon" />
+							<img src={checkIcon} alt="checksign icon" class="update-icon" />
 							Update
 						</button>
 					</header>
@@ -386,7 +377,7 @@
 				</label>
 
 				<button type="submit" class="proceed-button">
-					<img src="{checkIcon}" alt="checksign icon" class="update-icon" />
+					<img src={checkIcon} alt="checksign icon" class="update-icon" />
 					Proceed
 				</button>
 			</form>
@@ -403,7 +394,7 @@
 		min-height: calc(100vh - 70px);
 		padding: 32px 20px 80px;
 		background: #f6f6f6;
-		font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	}
 
 	.integration-container {
@@ -411,54 +402,13 @@
 		margin: 0 auto;
 	}
 
-	.page-header {
-		display: flex;
-		align-items: center;
-		min-height: 48px;
-		padding: 0 16px;
-		margin-bottom: 8px;
-		background: #ffffff;
-		border-bottom: 1px solid #eeeeee;
-	}
-
-	.page-header h1 {
-		margin: 0;
-		font-size: 13px;
-		font-weight: 600;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-	}
-
-	.back-link {
-		display: inline-flex;
-		gap: 6px;
-		align-items: center;
-		color: #8AC926;
-		font-size: 12px;
-		font-weight: 700;
-		letter-spacing: 0.04em;
-		text-decoration: none;
-		text-transform: uppercase;
-	}
-
-	.back-link:hover {
-		text-decoration: underline;
-	}
-
-	.header-divider {
-		width: 1px;
-		height: 17px;
-		margin: 0 17px;
-		background: #d9d9d9;
-	}
-
 	.success-message {
 		padding: 12px 16px;
 		margin-bottom: 8px;
-		color: #8AC926;
+		color: #8ac926;
 		font-size: 13px;
 		background: #ebf8d8;
-		border: 1px solid #8AC926;
+		border: 1px solid #8ac926;
 	}
 
 	.integrations-list {
@@ -498,20 +448,19 @@
 		font-size: 11px;
 		font-weight: 600;
 		text-transform: uppercase;
-		background: #8AC926;
-		border: 1px solid #8AC926;
+		background: #8ac926;
+		border: 1px solid #8ac926;
 		cursor: pointer;
 	}
 
 	.update-button:hover {
-		background: #8AC926;
+		background: #8ac926;
 	}
 
 	.update-button:focus-visible,
 	.copy-button:focus-visible,
 	.close-button:focus-visible,
-	.proceed-button:focus-visible,
-	.back-link:focus-visible {
+	.proceed-button:focus-visible {
 		outline: 2px solid #222222;
 		outline-offset: 2px;
 	}
@@ -584,7 +533,7 @@
 	}
 
 	.copy-button:hover {
-		color: #8AC926;
+		color: #8ac926;
 	}
 
 	.copy-icon {
@@ -734,10 +683,6 @@
 	@media (max-width: 480px) {
 		.integration-page {
 			padding: 20px 10px 60px;
-		}
-
-		.page-header {
-			padding: 0 12px;
 		}
 
 		.integration-header {

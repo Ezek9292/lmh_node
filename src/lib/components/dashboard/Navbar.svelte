@@ -16,6 +16,7 @@
 
 	let { branchName, alarmCount = 0, userImage }: Props = $props();
 	const isIntegrationPage = $derived(page.url.pathname === resolve('/integration'));
+	const isApiPage = $derived(page.url.pathname === resolve('/api'));
 </script>
 
 <header class="navbar">
@@ -70,10 +71,15 @@
 			<span>EXPORT</span>
 		</button>
 
-		<button class="action-link" type="button">
+		<a
+			class="action-link"
+			class:active={isApiPage}
+			href={resolve('/api')}
+			aria-current={isApiPage ? 'page' : undefined}
+		>
 			<span>⌘</span>
 			<span>API</span>
-		</button>
+		</a>
 
 		<button class="settings" type="button" aria-label="Settings">
 			<img src={settingsIcon} alt="" />
